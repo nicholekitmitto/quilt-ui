@@ -20,7 +20,7 @@ from app.db.base import Base
 
 from app.models.component import Component  # noqa: F401
 from app.models.release import Release  # noqa: F401
-from app.models.releaseItem import ReleaseItem  # noqa: F401
+from app.models.release_item import ReleaseItem  # noqa: F401
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
