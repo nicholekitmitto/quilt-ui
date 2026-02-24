@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import { getComponents, type Component } from "../api/components";
 
 export default function ComponentsPage() {
@@ -13,36 +14,23 @@ export default function ComponentsPage() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p>Loading components…</p>;
-  if (error) return <p>Error: {error}</p>;
-
   return (
-    <div>
-      <h1>Components</h1>
-      {components.length === 0 ? (
-        <p>No components found.</p>
-      ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Key</th>
-              <th>Status</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {components.map((c) => (
-              <tr key={c.id}>
-                <td>{c.name}</td>
-                <td>{c.key}</td>
-                <td>{c.status}</td>
-                <td>{c.description}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+    <div style={{ display: "flex" }}>
+      <aside>
+        <h2>Components</h2>
+        {loading && <p>Loading…</p>}
+        {error && <p>Error: {error}</p>}
+        <ul>
+          {components.map((c) => (
+            <li key={c.id}>
+              <Link to={`/components/${c.key}`}>{c.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </aside>
+      <main style={{ flex: 1 }}>
+        <Outlet />
+      </main>
     </div>
   );
 }
