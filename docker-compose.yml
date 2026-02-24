@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: registry
+      POSTGRES_PASSWORD: registry
+      POSTGRES_DB: nook
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ./services/nook
+    environment:
+      DATABASE_URL: postgresql+psycopg://registry:registry@db:5432/nook
+      CORS_ORIGINS: http://localhost:5173
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./services/nook:/app
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
