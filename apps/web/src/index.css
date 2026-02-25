@@ -1,11 +1,15 @@
 :root {
   --color-bg: #193525;
   --color-bg-surface: #224a35;
-  --color-primary: #f5b8c4;
+  --color-primary: #fdaf4a;
   --color-accent: #e84530;
-  --color-secondary: #e8941a;
+  --color-secondary: #f9769c;
+  --color-disabled: #545c58ad;
+  --color-success: #92a220;
+  --color-craft: #c17f4e;
   --color-text: #f5e6d0;
   --color-text-muted: #c4dabb;
+  --color-text-disabled: ##403f3d;
   --color-border: #5a7a3a;
   --color-card-bg: #2a5440;
   --color-code-bg: #152e20;
@@ -25,6 +29,14 @@
 body {
   margin: 0;
   min-width: 320px;
+}
+
+main {
+  max-width: 60rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 a {

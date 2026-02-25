@@ -12,8 +12,14 @@ export default function ComponentExamples({ componentKey }: { componentKey: stri
       {examples.map((ex) => {
         const rendered = ex.variants.map((v) => v.render());
         const code = rendered
-          .map((el) => reactElementToJSXString(el, { showDefaultProps: false }))
-          .join("\n\n");
+          .map((el) =>
+            reactElementToJSXString(el, {
+              showDefaultProps: false,
+              maxInlineAttributesLineLength: 120,
+              useBooleanShorthandSyntax: true,
+            })
+          )
+          .join("\n");
 
         return (
           <div key={ex.title} className="example-card">

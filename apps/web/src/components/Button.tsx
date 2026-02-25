@@ -1,13 +1,12 @@
 import { useId } from "react";
 import "./Button.scss";
-import stitched from "./Stitched.module.css";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: string;
-  variant?: string;
+  variant: string;
   enabled?: boolean;
   disabledTip?: string;
-  stitchedClass?: keyof typeof stitched;
+  borderColor?: string;
 }
 
 export default function Button({
@@ -15,10 +14,11 @@ export default function Button({
   variant,
   enabled = true,
   disabledTip,
-  stitchedClass,
+  borderColor,
   children,
   onClick,
   className,
+  style,
   ...rest
 }: ButtonProps) {
   const isDisabled = !enabled;
@@ -28,7 +28,7 @@ export default function Button({
     "btn",
     variant && `btn-${variant}`,
     color && `btn-${color}`,
-    stitchedClass && stitched[stitchedClass],
+    isDisabled && "disabled",
     className,
   ]
     .filter(Boolean)
@@ -42,10 +42,16 @@ export default function Button({
     onClick?.(e);
   };
 
+  const btnStyle = {
+    ...style,
+    ...(borderColor ? { "--btn-border-color": borderColor } : {}),
+  } as React.CSSProperties;
+
   return (
     <span style={{ position: "relative", display: "inline-block" }}>
       <button
         className={classes}
+        style={btnStyle}
         aria-disabled={isDisabled}
         aria-describedby={isDisabled && disabledTip ? tipId : undefined}
         onClick={handleClick}
