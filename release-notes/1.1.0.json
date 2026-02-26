@@ -1,0 +1,17 @@
+{
+  "version": "1.1.0",
+  "notes": "Added Chip component, minor Button fixes",
+  "commitSha": null,
+  "items": [
+    {
+      "componentKey": "button",
+      "changeType": "minor",
+      "note": "Added color prop support and craft color variant"
+    },
+    {
+      "componentKey": "chip",
+      "changeType": "major",
+      "note": "Initial Chip component implementation"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "quilt-ui-workspace",
+  "private": true,
+  "scripts": {
+    "add-component": "./scripts/add-component.sh",
+    "release": "node scripts/release.mjs --version"
+  }
+}

@@ -43,7 +43,7 @@ def create_release(payload: ReleaseCreateIn, db: Session = Depends(get_db)):
         if missing:
             raise HTTPException(
                 status_code=400,
-                detail="Unknown componentKey(s): %s" % ", ".join(missing),
+                detail={"message": "Unknown component keys", "missing_keys": missing},
             )
 
     try:

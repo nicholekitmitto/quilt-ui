@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ComponentsPage from "./pages/ComponentsPage";
+import ComponentsOverview from "./pages/ComponentsOverview";
 import ComponentDetailPage from "./pages/ComponentDetailPage";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/components" element={<ComponentsPage />}>
+        <Route index element={<ComponentsOverview />} />
         <Route path=":key" element={<ComponentDetailPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
