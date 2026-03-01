@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "notes": "Added Tooltip component",
+  "commitSha": null,
+  "items": [
+    {
+      "componentKey": "tooltip",
+      "changeType": "minor",
+      "note": "Initial Tooltip component implementation"
+    }
+  ]
+}

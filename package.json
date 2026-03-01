@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "add-component": "./scripts/add-component.sh",
+    "update-component": "./scripts/update-component.sh",
+    "delete-component": "./scripts/delete-component.sh",
     "release": "node scripts/release.mjs --version"
   }
 }

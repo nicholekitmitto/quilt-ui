@@ -1,0 +1,36 @@
+.detail {
+  padding-bottom: 4rem;
+
+  &-section {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  &-section-number {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-bg);
+    padding: 0 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    // pull it up so it sits on the border
+    margin-top: -0.4em;
+  }
+
+  &-section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    margin: 0 0 2rem 0;
+  }
+}

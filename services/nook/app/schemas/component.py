@@ -9,6 +9,12 @@ class ComponentCreateIn(BaseModel):
     status: str = Field(default="stable", max_length=20)
 
 
+class ComponentUpdateIn(BaseModel):
+    name: str | None = Field(default=None, min_length=1, max_length=120)
+    description: str | None = Field(default=None, max_length=500)
+    status: str | None = Field(default=None, max_length=20)
+
+
 class ComponentOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 

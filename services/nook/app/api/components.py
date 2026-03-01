@@ -7,7 +7,7 @@ from app.db.deps import get_db
 from app.models.component import Component
 from app.models.release import Release
 from app.models.release_item import ReleaseItem
-from app.schemas.component import ComponentCreateIn, ComponentOut
+from app.schemas.component import ComponentCreateIn, ComponentUpdateIn, ComponentOut
 from app.schemas.component_history import ComponentHistoryItemOut
 
 
@@ -67,3 +67,29 @@ def get_component_history(key: str, db: Session = Depends(get_db)):
         )
         for item, release in rows
     ]
+
+
+@router.patch("/{key}", response_model=ComponentOut)
+def update_component(key: str, payload: ComponentUpdateIn, db: Session = Depends(get_db)):
+    component = db.query(Component).filter(Component.key == key).first()
+    if component is None:
+        raise HTTPException(status_code=404, detail="Component not found")
+
+    updates = payload.model_dump(exclude_unset=True)
+    for field, value in updates.items():
+        setattr(component, field, value)
+
+    db.commit()
+    db.refresh(component)
+    return component
+
+
+@router.delete("/{key}", status_code=204)
+def delete_component(key: str, db: Session = Depends(get_db)):
+    component = db.query(Component).filter(Component.key == key).first()
+    if component is None:
+        raise HTTPException(status_code=404, detail="Component not found")
+
+    db.query(ReleaseItem).filter(ReleaseItem.component_id == component.id).delete()
+    db.delete(component)
+    db.commit()

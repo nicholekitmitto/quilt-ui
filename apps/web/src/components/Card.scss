@@ -1,0 +1,35 @@
+.card, .example-card {
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.example-preview {
+  background-color: var(--color-bg-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.example-variant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  &-label {
+    font-size: 0.8em;
+    color: var(--color-text-muted);
+  }
+}

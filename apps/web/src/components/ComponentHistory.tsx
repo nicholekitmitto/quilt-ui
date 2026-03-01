@@ -28,7 +28,6 @@ export default function ComponentHistory({ history }: Props) {
 
   return (
     <section className="history">
-      <h2>History</h2>
       <div className="history-list">
         {history.map((h, i) => (
           <div key={i} className="history-row">

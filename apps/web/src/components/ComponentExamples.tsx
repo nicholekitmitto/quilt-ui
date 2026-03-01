@@ -1,5 +1,6 @@
 import reactElementToJSXString from "react-element-to-jsx-string";
 import { getExamples } from "../content/examples";
+import "./Card.scss";
 
 export default function ComponentExamples({ componentKey }: { componentKey: string }) {
   const examples = getExamples(componentKey);
@@ -8,7 +9,6 @@ export default function ComponentExamples({ componentKey }: { componentKey: stri
 
   return (
     <section>
-      <h2>Examples</h2>
       {examples.map((ex) => {
         const rendered = ex.variants.map((v) => v.render());
         const code = rendered
