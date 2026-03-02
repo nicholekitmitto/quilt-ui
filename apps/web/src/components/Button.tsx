@@ -3,18 +3,18 @@ import "./Button.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: string;
+  textColor?: string;
   variant: string;
   enabled?: boolean;
   disabledTip?: string;
-  borderColor?: string;
 }
 
 export default function Button({
   color,
+  textColor,
   variant,
   enabled = true,
   disabledTip,
-  borderColor,
   children,
   onClick,
   className,
@@ -44,8 +44,8 @@ export default function Button({
 
   const btnStyle = {
     ...style,
-    ...(borderColor ? { "--btn-border-color": borderColor } : {}),
-  } as React.CSSProperties;
+    ...(textColor ? { "--btn-text-color": textColor } as React.CSSProperties : {}),
+  };
 
   return (
     <span style={{ position: "relative", display: "inline-block" }}>

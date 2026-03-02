@@ -28,6 +28,46 @@ const demos: Record<string, () => React.ReactNode> = {
       </Tooltip>
     </div>
   ),
+  modal: () => (
+    <div className="overview-demo">
+      <div style={{
+        position: "relative",
+        padding: "0.75rem 1rem",
+        border: "4px solid #a0724a",
+        borderRadius: "18px 22px 16px 24px / 22px 16px 20px 18px",
+        backgroundColor: "#f0e4cc",
+        color: "#4a3520",
+        fontSize: "0.75rem",
+        lineHeight: 1.4,
+        backgroundImage: `
+          repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 3px),
+          repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 3px)
+        `,
+        boxShadow: "0 4px 12px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.4)",
+        outline: "2px dashed #8b5e3c",
+        outlineOffset: "-8px",
+        minWidth: "180px",
+      }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: "0.4rem", marginBottom: "0.4rem", borderBottom: "2px dashed #a0724a" }}>
+          <strong>Delete?</strong>
+          <span style={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "22px",
+            height: "20px",
+            backgroundColor: "#c49a3c",
+            border: "1.5px solid #a0724a",
+            borderRadius: "6px 7px 5px 7px / 7px 5px 7px 6px",
+            fontSize: "0.65rem",
+            fontWeight: 700,
+            lineHeight: 1,
+          }}>✕</span>
+        </div>
+        <span>Are you sure?</span>
+      </div>
+    </div>
+  ),
   card: () => (
     <div className="overview-demo">
       <Card variant="quilted">

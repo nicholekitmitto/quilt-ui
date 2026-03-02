@@ -1,5 +1,4 @@
 @use "../styles/stitched" as *;
-@use "../styles/patch" as *;
 
 .btn {
   position: relative;
@@ -33,7 +32,7 @@
   &-text {
     background-color: transparent;
     border: none;
-    color: var(--btn-color, var(--color-text));
+    color: var(--btn-text-color, var(--btn-color, var(--color-text)));
 
     &:hover {
       background-color: color-mix(in srgb, var(--btn-color, var(--color-primary)) 30%, transparent);
@@ -52,7 +51,7 @@
   &-outlined {
     background-color: transparent;
     border: none;
-    color: var(--btn-color, var(--color-text));
+    color: var(--btn-text-color, var(--btn-color, var(--color-text)));
     outline: 1px solid var(--btn-color, var(--color-text));
     outline-offset: -3px;
 
@@ -71,10 +70,6 @@
   &-error     { --btn-color: var(--color-accent); }
   &-success   { --btn-color: var(--color-success); }
   &-craft     { --btn-color: var(--color-craft); }
-
-  &-patch {
-    @include patch;
-  }
 
   &.disabled {
     opacity: 0.6;

@@ -4,7 +4,7 @@ import type { ComponentExample } from "./types";
 export const examples: ComponentExample[] = [
   {
     title: "Button Variants",
-    description: "Primary, secondary, stitched, and patch styles",
+    description: "Text, contained, outlined, and stitched styles",
     variants: [
       {
         label: "Text",
@@ -25,10 +25,6 @@ export const examples: ComponentExample[] = [
             Stitched
           </Button>
         ),
-      },
-      {
-        label: "Patch",
-        render: () => <Button variant="patch">Patch</Button>,
       },
     ],
   },
@@ -68,19 +64,11 @@ export const examples: ComponentExample[] = [
           </Button>
         ),
       },
-      {
-        label: "Patch",
-        render: () => (
-          <Button variant="patch" enabled={false} disabledTip="Log in to continue">
-            Patch
-          </Button>
-        ),
-      },
     ],
   },
   {
     title: "Color",
-    description: "Primary, secondary, stitched, and patch styles",
+    description: "Color applied to each variant",
     variants: [
       {
         label: "Text",
@@ -91,7 +79,7 @@ export const examples: ComponentExample[] = [
         render: () => <Button variant="contained" color="success">Success</Button>,
       },
       {
-        label: "Ghost",
+        label: "Outlined",
         render: () => <Button variant="outlined" color="error">Error</Button>,
       },
       {
@@ -101,10 +89,6 @@ export const examples: ComponentExample[] = [
             Secondary
           </Button>
         ),
-      },
-      {
-        label: "Patch",
-        render: () => <Button variant="patch" color="primary" borderColor="#8b5e3c">Patch</Button>,
       },
     ],
   },
