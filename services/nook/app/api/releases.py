@@ -65,6 +65,9 @@ def create_release(payload: ReleaseCreateIn, db: Session = Depends(get_db)):
             )
             created_items.append(ri)
 
+            if item.status:
+                components[item.componentKey].status = item.status
+
         if created_items:
             db.add_all(created_items)
 

@@ -1,0 +1,41 @@
+
+$_tile-h-w: 80px;
+$_tile-h-h: 10px;
+$_tile-v-w: 10px;
+$_tile-v-h: 80px;
+
+@mixin quilt-stitch($offset: 4px, $corner-inset: 10px) {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -($offset);
+    pointer-events: none;
+    border-radius: inherit;
+
+    background-image:
+      url("../assets/stitch-horizontal.svg"),
+      url("../assets/stitch-horizontal.svg"),
+      url("../assets/stitch-vertical.svg"),
+      url("../assets/stitch-vertical.svg");
+
+    background-repeat:
+      repeat-x,
+      repeat-x,
+      repeat-y,
+      repeat-y;
+
+    background-size:
+      $_tile-h-w $_tile-h-h,
+      $_tile-h-w $_tile-h-h,
+      $_tile-v-w $_tile-v-h,
+      $_tile-v-w $_tile-v-h;
+
+    background-position:
+      $corner-inset top,
+      $corner-inset bottom,
+      left $corner-inset,
+      right $corner-inset;
+  }
+}

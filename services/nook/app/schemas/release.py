@@ -11,6 +11,7 @@ class ReleaseItemIn(BaseModel):
     componentKey: str = Field(min_length=1)
     changeType: ChangeType
     note: str = Field(min_length=1, max_length=2000)
+    status: str | None = Field(default=None, max_length=20)
 
 class ReleaseCreateIn(BaseModel):
     version: str = Field(min_length=1, max_length=50)

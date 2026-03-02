@@ -6,7 +6,7 @@
   justify-content: center;
   gap: 6px;
   padding: .6rem 0.85rem;
-  border-radius: 8px;
+  border-radius: 10px 8px 11px 7px / 8px 10px 7px 11px;
   font-size: 0.78rem;
   line-height: 1;
   text-align: center;
@@ -31,7 +31,19 @@
     border: 2px solid rgba(255, 255, 255, 0.25);
   }
 
+  &__icon {
+    width: 14px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
   &-stitched {
-    @include stitched(rgb(255, 248, 239), 3.5px, 5px, 0.5, 1.5px);
+    background-color: var(--chip-color, var(--color-leather));
+    color: #fff8ef;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+
+    @include stitched(rgba(68, 66, 62, 0.5), 3.5px, 6px 8px 5px 9px / 7px 5px 8px 6px, 0.5, 1.5px);
   }
 }

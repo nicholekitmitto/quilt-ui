@@ -1,0 +1,151 @@
+.demo {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border: 1px dashed var(--color-border);
+  border-radius: 16px;
+  background: var(--color-bg-surface);
+  position: relative;
+  overflow: hidden;
+
+  &__mushroom {
+    position: absolute;
+    width: 48px;
+    height: 56px;
+    pointer-events: none;
+    opacity: 0.8;
+
+    &--bl {
+      bottom: -4px;
+      left: 16px;
+    }
+
+    &--tr {
+      top: -6px;
+      right: 20px;
+      transform: rotate(12deg) scale(0.8);
+      opacity: 0.6;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    @media (max-width: 720px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__label {
+    display: inline-flex;
+    width: fit-content;
+  }
+
+  &__heart {
+    width: 16px;
+    height: 14px;
+    vertical-align: middle;
+  }
+
+  &__row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  &__caption {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  &__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    strong {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__card-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  &__modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h3 {
+      margin: 0;
+      color: #4a3520;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  &__tooltip-demo {
+    padding: 1rem 0;
+  }
+
+  &__history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__history-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+}

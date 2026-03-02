@@ -1,0 +1,29 @@
+@use "../styles/quilt" as *;
+@use "../styles/stitched" as *;
+
+.quilt-card {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background-color: transparent;
+  color: var(--color-text);
+  box-sizing: border-box;
+
+  &--quilted {
+    // border: 2px solid var(--color-craft);
+    border-radius: 14px;
+    padding: 1.5rem;
+    // background-color: #f5ead4;
+    background-color: var(--color-linen);
+    color: #4a3520;
+
+    @include quilt-stitch($offset: 4px, $corner-inset: 10px);
+  }
+
+  &--stitched {
+    border: 2px solid var(--color-craft);
+    border-radius: 14px;
+
+    @include stitched(var(--color-craft), $inset: 5px, $radius: 10px);
+  }
+}

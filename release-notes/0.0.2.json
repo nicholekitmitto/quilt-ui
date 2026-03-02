@@ -1,0 +1,19 @@
+{
+  "version": "0.0.2",
+  "notes": "Styled Tooltip component, started adding a demo",
+  "commitSha": null,
+  "items": [
+    {
+      "componentKey": "tooltip",
+      "changeType": "major",
+      "note": "Stylized tooltip component",
+      "status": "stable"
+    },
+    {
+      "componentKey": "card",
+      "changeType": "major",
+      "note": "Stylized card component",
+      "status": "stable"
+    }
+  ]
+}

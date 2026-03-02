@@ -1,4 +1,4 @@
-@mixin stitched($color, $inset: 6px, $radius: 10px, $opacity: 0.6, $border-width: 2px) {
+@mixin stitched($color, $inset: 3px, $radius: 10px, $opacity: 0.6, $border-width: 2px) {
   position: relative;
 
   &::after {

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+  <!-- Wide dome cap -->
+  <path
+    d="M2 30 Q2 8 26 6 Q50 8 50 30 Z"
+    fill="#d94a38"
+    stroke="#6e3020"
+    stroke-width="0.8"
+    stroke-linejoin="round"
+  />
+
+  <!-- Spots on cap -->
+  <ellipse cx="14" cy="16" rx="4" ry="3" transform="rotate(-12 14 16)" fill="#f5ddb8" opacity="0.85"/>
+  <ellipse cx="30" cy="13" rx="3.5" ry="2.5" transform="rotate(8 30 13)" fill="#f5ddb8" opacity="0.8"/>
+  <ellipse cx="40" cy="20" rx="3" ry="2" transform="rotate(-6 40 20)" fill="#f5ddb8" opacity="0.75"/>
+  <ellipse cx="10" cy="24" rx="2.5" ry="1.8" transform="rotate(10 10 24)" fill="#f0c878" opacity="0.65"/>
+  <ellipse cx="35" cy="25" rx="2" ry="1.5" transform="rotate(-8 35 25)" fill="#f0c878" opacity="0.6"/>
+  <ellipse cx="22" cy="20" rx="2.8" ry="2" transform="rotate(5 22 20)" fill="#f5ddb8" opacity="0.7"/>
+
+  <!-- Cross stitch on cap -->
+  <line x1="24" y1="18" x2="28" y2="22" stroke="#6e3020" stroke-width="0.7" stroke-linecap="round" opacity="0.45"/>
+  <line x1="28" y1="18" x2="24" y2="22" stroke="#6e3020" stroke-width="0.7" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- Stem (short, wide, slight taper) -->
+  <path
+    d="M16 30 C15 36 15 44 18 48 Q22 50 26 50 Q30 50 34 48 C37 44 37 36 36 30 Z"
+    fill="#f2e0c8"
+    stroke="#a08060"
+    stroke-width="0.6"
+    stroke-linejoin="round"
+  />
+
+  <!-- Stem vertical stripes -->
+  <line x1="19" y1="32" x2="20" y2="47" stroke="#b8a080" stroke-width="0.5" opacity="0.45"/>
+  <line x1="22.5" y1="31" x2="22.5" y2="49" stroke="#b8a080" stroke-width="0.5" opacity="0.4"/>
+  <line x1="26" y1="31" x2="26" y2="49.5" stroke="#b8a080" stroke-width="0.5" opacity="0.45"/>
+  <line x1="29.5" y1="31" x2="29.5" y2="49" stroke="#b8a080" stroke-width="0.5" opacity="0.4"/>
+  <line x1="33" y1="32" x2="32" y2="47" stroke="#b8a080" stroke-width="0.5" opacity="0.45"/>
+</svg>

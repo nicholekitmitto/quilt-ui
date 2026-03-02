@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+  <!-- Slightly organic/wobbly felt heart with stitched outline -->
+  <path
+    d="M10 16.5C10 16.5 1.5 11 1.5 5.5C1.5 2.8 3.5 1 5.8 1C7.6 1 9.2 2.1 10 3.5C10.8 2.1 12.4 1 14.2 1C16.5 1 18.5 2.8 18.5 5.5C18.5 11 10 16.5 10 16.5Z"
+    fill="#e84530"
+    stroke="#8b4030"
+    stroke-width="0.8"
+    stroke-linejoin="round"
+  />
+  <!-- Inner stitch line -->
+  <path
+    d="M10 14.2C10 14.2 3.2 9.8 3.2 5.8C3.2 3.8 4.7 2.6 6.2 2.6C7.5 2.6 8.8 3.4 10 4.8C11.2 3.4 12.5 2.6 13.8 2.6C15.3 2.6 16.8 3.8 16.8 5.8C16.8 9.8 10 14.2 10 14.2Z"
+    fill="none"
+    stroke="#8b4030"
+    stroke-width="0.6"
+    stroke-dasharray="2 1.5"
+    stroke-linecap="round"
+    opacity="0.45"
+  />
+</svg>

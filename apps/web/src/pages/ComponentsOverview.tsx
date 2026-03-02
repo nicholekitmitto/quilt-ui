@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { getComponents, type Component } from "../api/components";
 import Button from "../components/Button";
 import Chip from "../components/Chip";
+import Tooltip from "../components/Tooltip";
+import Card from "../components/Card";
+import Demo from "../components/Demo";
 import "./ComponentsOverview.scss";
 
 const demos: Record<string, () => React.ReactNode> = {
@@ -14,8 +17,22 @@ const demos: Record<string, () => React.ReactNode> = {
   ),
   chip: () => (
     <div className="overview-demo">
-      <Chip label="Stable" color="var(--color-success)" />
+      <Chip label="Stable" color="var(--color-success-chip)" />
       <Chip label="Beta" color="var(--color-primary)" />
+    </div>
+  ),
+  tooltip: () => (
+    <div className="overview-demo">
+      <Tooltip content="Hello!" position="top">
+        <Button variant="stitched" color="success">Hover me</Button>
+      </Tooltip>
+    </div>
+  ),
+  card: () => (
+    <div className="overview-demo">
+      <Card variant="quilted">
+        <span style={{ fontSize: "0.85rem" }}>Quilted card</span>
+      </Card>
     </div>
   ),
 };
@@ -34,9 +51,10 @@ export default function ComponentsOverview() {
   if (loading) return <p>Loading…</p>;
 
   return (
-    <div>
+    <div style={{ paddingBottom: "4rem" }}>
       <h1>Components</h1>
       <p>All available components in the library.</p>
+      <Demo />
       <div className="overview-grid">
         {components.map((c) => (
           <Link to={`/components/${c.key}`} key={c.id} className="overview-card">
@@ -45,7 +63,7 @@ export default function ComponentsOverview() {
             </div>
             <div className="overview-card-footer">
               <span className="overview-card-name">{c.name}</span>
-              <Chip label={c.status} color={c.status === "stable" ? "var(--color-success)" : "var(--color-primary)"} />
+              <Chip label={c.status} color={c.status === "stable" ? "var(--color-success-chip)" : "var(--color-primary)"} />
             </div>
           </Link>
         ))}
